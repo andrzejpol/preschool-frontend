@@ -1,29 +1,26 @@
-import { Route, Routes} from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Categories from "./components/Categories";
-import Attendance from "./components/Attendance";
-import Students from "./components/Students";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import {Route, Routes} from "react-router-dom";
+import DashboardLayout from "./components/DashboardLayout";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigation/>}>
-        <Route index element={<Categories />}/>
-        <Route path="dashboard" element={<p>Dashboard</p>}/>
-        <Route path="students" element={<Students/>}/>
+      <Route path="/dashboard" element={<DashboardLayout/>}>
+        <Route index element={<Dashboard/>}/>
+        <Route path="students" element={<p>students</p>}/>
         <Route path="classes" element={<p>Classes</p>}/>
         <Route path="teachers" element={<p>Teachers</p>}/>
         <Route path="parents" element={<p>Parents</p>}/>
-        <Route path="attendance" element={<Attendance/>}/>
+        <Route path="attendance" element={<p>Attendance</p>}/>
+        <Route path="events" element={<p>Events</p>}/>
+        <Route path="messages" element={<p>Messages</p>}/>
       </Route>
       <Route path="/settings" element={<p>Settings</p>}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/register" element={<Register/>}/>
+      <Route path="/login" element={<p>Login</p>}/>
+      <Route path="/register" element={<p>Register</p>}/>
       <Route path="/logout" element={<p>Logout page</p>}/>
     </Routes>
   )
 }
 
-export default App
+export default App;
