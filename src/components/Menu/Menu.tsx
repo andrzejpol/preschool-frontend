@@ -3,13 +3,14 @@ import Logo from "../../assets/logo.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
-  faChalkboardUser, faClipboardUser,
+  faChalkboardUser, faChild, faClipboardUser,
   faGear, faGraduationCap,
   faHouse, faMessage, faPeopleGroup,
   faPersonBreastfeeding,
   faRightFromBracket,
   faUser
 } from "@fortawesome/free-solid-svg-icons";
+import {role} from "../../data.ts";
 
 const menuItems = [
   {
@@ -18,42 +19,62 @@ const menuItems = [
       {
         icon: faHouse,
         label: "Home",
-        href: "/dashboard"
+        href: "/dashboard",
+        visible: ["admin"],
       },
       {
         icon: faChalkboardUser,
         label: "Teachers",
-        href: "/dashboard/teachers"
+        href: "/dashboard/teachers",
+        visible: ["admin"],
+      },
+      {
+        icon: faChild,
+        label: "My kids",
+        href: "/my-kids",
+        visible: ["parent"],
       },
       {
         icon: faGraduationCap,
         label: "Students",
-        href: "/dashboard/students"
+        href: "/dashboard/students",
+        visible: ["admin"],
       },
       {
         icon: faPersonBreastfeeding,
         label: "Parents",
-        href: "/dashboard/parents"
+        href: "/dashboard/parents",
+        visible: ["admin"],
       },
       {
         icon: faPeopleGroup,
         label: "Classes",
-        href: "/dashboard/classes"
+        href: "/dashboard/classes",
+        visible: ["admin"],
       },
       {
         icon: faClipboardUser,
         label: "Attendance",
-        href: "/dashboard/attendance"
+        href: "/dashboard/attendance",
+        visible: ["admin"],
       },
       {
         icon: faCalendarDays,
         label: "Events",
-        href: "/dashboard/events"
+        href: "/dashboard/events",
+        visible: ["admin"],
       },
       {
         icon: faMessage,
         label: "Messages",
-        href: "/dashboard/messages"
+        href: "/dashboard/messages",
+        visible: ["admin"],
+      },
+      {
+        icon: faMessage,
+        label: "My Messages",
+        href: "/messages",
+        visible: ["parent", "teacher"],
       }
     ]
   },
@@ -63,17 +84,20 @@ const menuItems = [
       {
         icon: faUser,
         label: "Profile",
-        href: "/profile"
+        href: "/profile",
+        visible: ["admin", "teacher", "parent"],
       },
       {
         icon: faGear,
         label: "Settings",
-        href: "/settings"
+        href: "/settings",
+        visible: ["admin", "teacher", "parent"],
       },
       {
         icon: faRightFromBracket,
         label: "Logout",
-        href: "/logout"
+        href: "/logout",
+        visible: ["admin", "teacher", "parent"],
       }
     ]
   }
@@ -90,18 +114,22 @@ const Menu = () => {
             <span className="hidden lg:block text-gray-400 font-light my-4">
               {menuItem.title}
             </span>
-            {menuItem.items.map((item) => (
-              <NavLink to={item.href} end key={item.label} className={({isActive}) =>
-                isActive
-                  ? "text-blue-500 flex items-center justify-center lg:justify-start gap-4 py-2"
-                  : "text-gray-500 flex items-center justify-center lg:justify-start gap-4 py-2"
+            {menuItem.items.map((item) => {
+              if (item.visible.includes(role)) {
+                return (
+                  <NavLink to={item.href} end key={item.label} className={({isActive}) =>
+                    isActive
+                      ? "text-preschoolPrimary flex items-center justify-center lg:justify-start gap-4 py-2 hover:bg-preschoolSecondaryLight"
+                      : "text-gray-500 flex items-center justify-center lg:justify-start gap-4 py-2 hover:bg-preschoolSecondaryLight"
+                  }
+                  >
+                    <FontAwesomeIcon icon={item.icon} width={20} height={20}
+                                     className="flex items-center justify-center"/>
+                    <span className="hidden lg:block">{item.label}</span>
+                  </NavLink>
+                )
               }
-              >
-                <FontAwesomeIcon icon={item.icon} width={20} height={20}
-                                 className="flex items-center justify-center"/>
-                <span className="hidden lg:block">{item.label}</span>
-              </NavLink>
-            ))}
+            })}
           </div>
         ))}
       </div>
