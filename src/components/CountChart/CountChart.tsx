@@ -1,4 +1,3 @@
-import {RadialBarChart, RadialBar, ResponsiveContainer} from 'recharts';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChildren, faGraduationCap} from "@fortawesome/free-solid-svg-icons";
 
@@ -30,14 +29,7 @@ const CountChart = () => {
         <FontAwesomeIcon icon={faGraduationCap} className="w-[20px] h-[20px]"/>
       </div>
       <div className="w-full h-[75%] relative">
-        <ResponsiveContainer>
-          <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={32} data={data}>
-            <RadialBar
-              background
-              dataKey="count"
-            />
-          </RadialBarChart>
-        </ResponsiveContainer>
+
         <FontAwesomeIcon icon={faChildren}
                          className="w-[50px] h-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"/>
       </div>

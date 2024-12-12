@@ -4,12 +4,18 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Pagination from "../Pagination";
 import List from "../List";
 import {Link} from "react-router-dom";
-import {role, teachersData} from "../../data.ts";
+import {role} from "../../data.ts";
+import AddTeacherModal from "../AddTeacherModal";
+import {useMemo, useState} from "react";
+import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup.tsx";
+import debounce from "lodash.debounce";
+import {useDispatch, useSelector} from "react-redux";
+import {removeTeacher} from "../../slices/allTeachersSlice.ts";
 
 type TeacherType = {
   id: number;
-  teacherId: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   email?: string;
   photo: string;
   phone: string;
@@ -22,11 +28,6 @@ const columns = [
   {
     header: "Info",
     accessor: "info"
-  },
-  {
-    header: "Teacher ID",
-    accessor: "teacherId",
-    className: "hidden md:table-cell"
   },
   {
     header: "Subjects",
@@ -55,6 +56,30 @@ const columns = [
 ];
 
 const TeachersPage = () => {
+  const [userToRemove, setUserToRemove] = useState("");
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
+  const teachers = useSelector((state) => state.allTeachers.teachers);
+  const dispatch = useDispatch();
+
+  const filteredData = teachers.filter((teacherData) =>
+    teacherData.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const debouncedSearch = useMemo(
+    () =>
+      debounce((query: string) => {
+        setSearchQuery(query);
+      }, 300),
+    []
+  );
+
+
+  const handleConfirm = () => {
+    dispatch(removeTeacher(userToRemove));
+    setConfirmationModalOpen(false);
+  };
 
   const renderRow = (item: TeacherType) => (
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight">
@@ -62,11 +87,10 @@ const TeachersPage = () => {
         <img src={item.photo} alt="teacher's photo"
              className="w-[40px] h-[40px] md:hidden xl:block rounded-full object-cover"/>
         <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
+          <h3 className="font-semibold">{item.firstName} {item.lastName}</h3>
           <p className="text-xs text-gray-500">{item?.email}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item.teacherId}</td>
       <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
       <td className="hidden md:table-cell">{item.classes.join(",")}</td>
       <td className="hidden md:table-cell">{item.phone}</td>
@@ -74,12 +98,17 @@ const TeachersPage = () => {
       <td className="">
         <div className="flex items-center gap-2">
           <Link to={`/dashboard/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary">
+            <button
+              className="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary">
               <FontAwesomeIcon icon={faBinoculars} className="flex items-center justify-center"/>
             </button>
           </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary">
+            <button onClick={() => {
+              setConfirmationModalOpen(true);
+              setUserToRemove(item.id);
+            }}
+                    className="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary">
               <FontAwesomeIcon icon={faTrash} className="flex items-center justify-center"/>
             </button>
           )}
@@ -94,18 +123,27 @@ const TeachersPage = () => {
       <div className="flex items-center justify-between">
         <h1 className=" hidden md:block text-lg font-semibold">All Teachers</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
-          <TableSearch/>
+          <TableSearch onSearch={debouncedSearch}/>
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
+            <button onClick={() => setModalOpen(true)}
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
               <FontAwesomeIcon icon={faPlus} className="flex items-center justify-center"/>
             </button>
           </div>
         </div>
       </div>
-      <List columns={columns} renderRow={renderRow} data={teachersData}/>
+      <List columns={columns} renderRow={renderRow} data={filteredData}/>
       <Pagination/>
+      {isModalOpen && <AddTeacherModal onClose={() => setModalOpen(false)}/>}
+      {isConfirmationModalOpen && (
+        <ConfirmationPopup
+          action="usunąć"
+          onConfirm={handleConfirm}
+          onClose={() => setConfirmationModalOpen(false)}
+        />
+      )}
     </div>
-  )
+  );
 }
 
 export default TeachersPage;
