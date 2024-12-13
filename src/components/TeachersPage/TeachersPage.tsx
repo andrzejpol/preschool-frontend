@@ -10,7 +10,8 @@ import {useMemo, useState} from "react";
 import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup.tsx";
 import debounce from "lodash.debounce";
 import {useDispatch, useSelector} from "react-redux";
-import {removeTeacher} from "../../slices/allTeachersSlice.ts";
+import {addTeacher, removeTeacher} from "../../slices/allTeachersSlice.ts";
+import {closeModal, openModal} from "../../slices/addTeacherModalSlice.ts";
 
 type TeacherType = {
   id: number;
@@ -57,10 +58,10 @@ const columns = [
 
 const TeachersPage = () => {
   const [userToRemove, setUserToRemove] = useState("");
-  const [isModalOpen, setModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
   const teachers = useSelector((state) => state.allTeachers.teachers);
+  const isAddTeacherModalOpen = useSelector((state) => state.addTeacherModal.isOpen);
   const dispatch = useDispatch();
 
   const filteredData = teachers.filter((teacherData) =>
@@ -125,7 +126,7 @@ const TeachersPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch onSearch={debouncedSearch}/>
           <div className="flex items-center gap-4 self-end">
-            <button onClick={() => setModalOpen(true)}
+            <button onClick={() => dispatch(openModal())}
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
               <FontAwesomeIcon icon={faPlus} className="flex items-center justify-center"/>
             </button>
@@ -134,7 +135,7 @@ const TeachersPage = () => {
       </div>
       <List columns={columns} renderRow={renderRow} data={filteredData}/>
       <Pagination/>
-      {isModalOpen && <AddTeacherModal onClose={() => setModalOpen(false)}/>}
+      {isAddTeacherModalOpen && <AddTeacherModal onClose={() => dispatch(closeModal())}/>}
       {isConfirmationModalOpen && (
         <ConfirmationPopup
           action="usunąć"
