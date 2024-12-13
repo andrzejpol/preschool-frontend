@@ -55,7 +55,7 @@ const ParentsPage = () => {
       <td className="hidden md:table-cell">{item.address}</td>
       <td className="">
         <div className="flex items-center gap-2">
-          <Link to={`/dashboard/teachers/${item.id}`}>
+          <Link to={`/dashboard/parents/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary">
               <FontAwesomeIcon icon={faBinoculars} className="flex items-center justify-center"/>
             </button>

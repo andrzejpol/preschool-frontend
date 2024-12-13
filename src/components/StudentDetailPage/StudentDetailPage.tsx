@@ -89,6 +89,12 @@ const StudentDetailPage = () => {
                   className="p-3 rounded-md bg-preschoolSecondary text-gray-500">Student&apos;s Parents</Link>
           </div>
         </div>
+        <div className="bg-white p-4 rounded-md">
+          <h1 className="text-xl font-semibold">Parents</h1>
+          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+            
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -76,7 +76,6 @@ const TeachersPage = () => {
     []
   );
 
-
   const handleConfirm = () => {
     dispatch(removeTeacher(userToRemove));
     setConfirmationModalOpen(false);

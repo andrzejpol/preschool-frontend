@@ -13,6 +13,7 @@ import EventsPage from "./components/EventsPage";
 import TeacherDetailPage from "./components/TeacherDetailPage";
 import AttendancePage from "./components/AttendancePage";
 import StudentDetailPage from "./components/StudentDetailPage";
+import ParentDetailPage from "./components/ParentDetailPage";
 
 function App() {
   const isAuthenticated = true;
@@ -31,6 +32,7 @@ function App() {
         <Route path="teachers" element={<TeachersPage/>}/>
         <Route path="teachers/:id" element={<TeacherDetailPage/>}/>
         <Route path="parents" element={<ParentsPage/>}/>
+        <Route path="parents/:id" element={<ParentDetailPage/>}/>
         <Route path="attendance" element={<AttendancePage/>}/>
         <Route path="events" element={<EventsPage/>}/>
         <Route path="messages" element={<p>Messages</p>}/>
