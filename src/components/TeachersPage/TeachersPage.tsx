@@ -11,7 +11,7 @@ import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup.tsx";
 import debounce from "lodash.debounce";
 import {useDispatch, useSelector} from "react-redux";
 import {addTeacher, removeTeacher} from "../../slices/allTeachersSlice.ts";
-import {closeModal, openModal} from "../../slices/addTeacherModalSlice.ts";
+import {closeModal, openModal} from "../../slices/modalsSlice.ts";
 
 type TeacherType = {
   id: number;
@@ -61,7 +61,7 @@ const TeachersPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
   const teachers = useSelector((state) => state.allTeachers.teachers);
-  const isAddTeacherModalOpen = useSelector((state) => state.addTeacherModal.isOpen);
+  const isAddTeacherModalOpen = useSelector((state) => state.modals.addTeacherModal.isOpen);
   const dispatch = useDispatch();
 
   const filteredData = teachers.filter((teacherData) =>
@@ -125,7 +125,7 @@ const TeachersPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch onSearch={debouncedSearch}/>
           <div className="flex items-center gap-4 self-end">
-            <button onClick={() => dispatch(openModal())}
+            <button onClick={() => dispatch(openModal({modalName: 'addTeacherModal'}))}
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
               <FontAwesomeIcon icon={faPlus} className="flex items-center justify-center"/>
             </button>
@@ -134,7 +134,7 @@ const TeachersPage = () => {
       </div>
       <List columns={columns} renderRow={renderRow} data={filteredData}/>
       <Pagination/>
-      {isAddTeacherModalOpen && <AddTeacherModal onClose={() => dispatch(closeModal())}/>}
+      {isAddTeacherModalOpen && <AddTeacherModal onClose={() => dispatch(closeModal({modalName: 'addTeacherModal'}))}/>}
       {isConfirmationModalOpen && (
         <ConfirmationPopup
           action="usunąć"

@@ -17,8 +17,8 @@ const List = ({columns, renderRow, data}: {
         ))}
       </tr>
       </thead>
-      {noData ? (<div className="flex items-center justify-center h-64 w-full">
-        <p className="text-xl font-semibold text-gray-500">There is no data</p>
+      {noData ? (<div className="flex items-center justify-center h-64 w-full col-span-full">
+        <p className="text-xl font-semibold text-gray-500 ">There is no data</p>
       </div>) : (<tbody>{data.map((item) => renderRow(item))}</tbody>)}
     </table>
   )

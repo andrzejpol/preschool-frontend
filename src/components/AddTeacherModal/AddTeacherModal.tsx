@@ -5,7 +5,7 @@ import * as yup from "yup";
 import {v4 as uuidv4} from "uuid";
 import {useDispatch} from "react-redux";
 import {addTeacher} from "../../slices/allTeachersSlice.ts";
-import {closeModal} from "../../slices/addTeacherModalSlice.ts";
+import {closeModal} from "../../slices/modalsSlice.ts";
 
 const AddTeacherModal = ({onClose}: { onClose: () => {} }) => {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const AddTeacherModal = ({onClose}: { onClose: () => {} }) => {
   const onSubmit = (data: any) => {
     dispatch(addTeacher(data));
     reset();
-    dispatch(closeModal());
+    dispatch(closeModal({modalName: 'addTeacherModal'}));
   };
 
   const handleSubjectsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
