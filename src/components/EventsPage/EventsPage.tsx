@@ -5,6 +5,10 @@ import List from "../List";
 import {eventsData, role} from "../../data.ts";
 import Pagination from "../Pagination";
 import {Link} from "react-router-dom";
+import {closeModal, openModal} from "../../slices/modalsSlice.ts";
+import {useDispatch, useSelector} from "react-redux";
+import AddTeacherModal from "../AddTeacherModal";
+import AddEventModal from "../AddEventModal";
 
 type EventType = {
   id: number;
@@ -45,6 +49,8 @@ const columns = [
   },
 ];
 const EventsPage = () => {
+  const dispatch = useDispatch();
+  const isAddEventModalOpen = useSelector((state) => state.modals.addEventModal.isOpen);
 
   const renderRow = (item: EventType) => (
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight">
@@ -78,7 +84,8 @@ const EventsPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch/>
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
+            <button onClick={() => dispatch(openModal({modalName: 'addEventModal'}))}
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
               <FontAwesomeIcon icon={faPlus} className="flex items-center justify-center"/>
             </button>
           </div>
@@ -86,6 +93,7 @@ const EventsPage = () => {
       </div>
       <List columns={columns} renderRow={renderRow} data={eventsData}/>
       <Pagination/>
+      {isAddEventModalOpen && <AddEventModal onClose={() => dispatch(closeModal({modalName: 'addEventModal'}))}/>}
     </div>
   )
 };
