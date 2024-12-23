@@ -1,6 +1,10 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarDays, faDroplet, faEnvelope, faPhone, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
+import {closeModal, openModal} from "../../slices/modalsSlice.ts";
+import {useDispatch, useSelector} from "react-redux";
+import AddTeacherModal from "../AddTeacherModal";
+import AddOpinionModal from "../AddOpinionModal/AddOpinionModal.tsx";
 
 const opinions = [
   {
@@ -26,6 +30,8 @@ const opinions = [
 ]
 
 const StudentDetailPage = () => {
+  const dispatch = useDispatch();
+  const isAddOpinionModalOpen = useSelector((state) => state.modals.addOpinionModal.isOpen);
 
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
@@ -64,7 +70,8 @@ const StudentDetailPage = () => {
         <div className="mt-4">
           <div className="flex items-center justify-end md:justify-between">
             <h1 className=" hidden md:block text-lg font-semibold my-2">Opinions</h1>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
+            <button onClick={() => dispatch(openModal({modalName: 'addOpinionModal'}))}
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary">
               <FontAwesomeIcon icon={faPlus} className="flex items-center justify-center"/>
             </button>
           </div>
@@ -92,12 +99,13 @@ const StudentDetailPage = () => {
         <div className="bg-white p-4 rounded-md">
           <h1 className="text-xl font-semibold">Parents</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            
+
           </div>
         </div>
       </div>
+      {isAddOpinionModalOpen && <AddOpinionModal onClose={() => dispatch(closeModal({modalName: 'addOpinionModal'}))}/>}
     </div>
-  )
+  );
 };
 
 export default StudentDetailPage;

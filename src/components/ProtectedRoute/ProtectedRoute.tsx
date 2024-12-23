@@ -1,12 +1,11 @@
 import {Navigate} from "react-router-dom";
+import {getToken} from "../../../authService";
 import React from "react";
 
-const ProtectedRoute = ({children, isAuthenticated}: { children: React.ReactNode, isAuthenticated: boolean }) => {
-  if (!isAuthenticated) {
-    return <Navigate to={"/login"}/>;
-  }
+const ProtectedRoute = ({children}: { children: React.ReactNode }) => {
+  const token = getToken();
 
-  return children;
+  return token ? children : <Navigate to="/login"/>;
 };
 
 export default ProtectedRoute;

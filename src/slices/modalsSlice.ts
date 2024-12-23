@@ -15,6 +15,9 @@ const initialState = {
   },
   addClassModal: {
     isOpen: false,
+  },
+  addOpinionModal: {
+    isOpen: false,
   }
 };
 

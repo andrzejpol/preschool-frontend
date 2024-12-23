@@ -14,14 +14,14 @@ import TeacherDetailPage from "./components/TeacherDetailPage";
 import AttendancePage from "./components/AttendancePage";
 import StudentDetailPage from "./components/StudentDetailPage";
 import ParentDetailPage from "./components/ParentDetailPage";
+import Logout from "./components/Logout";
 
 function App() {
-  const isAuthenticated = true;
 
   return (
     <Routes>
       <Route path="/dashboard" element={
-        <ProtectedRoute isAuthenticated={isAuthenticated}>
+        <ProtectedRoute>
           <DashboardLayout/>
         </ProtectedRoute>
       }>
@@ -40,7 +40,7 @@ function App() {
       <Route path="/settings" element={<p>Settings</p>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
-      <Route path="/logout" element={<p>Logout page</p>}/>
+      <Route path="/logout" element={<Logout/>}/>
       <Route path="*" element={<NotFoundPage/>}/>
     </Routes>
   )

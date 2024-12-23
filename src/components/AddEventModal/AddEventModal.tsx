@@ -6,10 +6,11 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {v4 as uuidv4} from "uuid";
 import {closeModal} from "../../slices/modalsSlice.ts";
 
-const AddEventModalHeader = ({onClose}: { onClose: () => {} }) => {
+const AddEventModal = ({onClose}: { onClose: () => {} }) => {
   const dispatch = useDispatch();
 
   const schema = yup.object({
+    id: yup.string().required(),
     title: yup.string().required("Title is required"),
     group: yup.string().required("Group is required"),
     date: yup.date().required("Date is required"),
@@ -29,7 +30,7 @@ const AddEventModalHeader = ({onClose}: { onClose: () => {} }) => {
       id: uuidv4(),
       title: "",
       group: "",
-      date: "",
+      date: new Date(),
       startTime: "",
       endTime: "",
     },
@@ -144,4 +145,4 @@ const AddEventModalHeader = ({onClose}: { onClose: () => {} }) => {
   )
 };
 
-export default AddEventModalHeader;
+export default AddEventModal;

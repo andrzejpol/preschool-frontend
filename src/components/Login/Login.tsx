@@ -1,30 +1,37 @@
 import React, {useState} from 'react';
 import Logo from "../../assets/logo.svg";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {login} from "../../../authService.ts"
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log('Username:', username);
-    console.log('Password:', password);
+    try {
+      const response = await login(email, password);
+      console.log(response.token);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log("Błąd logowania", error);
+    }
   };
 
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-gradient-to-b from-preschoolPrimary to-preschoolPrimaryLight">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center bg-white rounded-md p-10">
+      <form onSubmit={handleLogin} className="flex flex-col gap-5 items-center bg-white rounded-md p-10">
         <img src={Logo} alt="logo" width={150} height={150}/>
         <div className="flex flex-col gap-2">
-          <label htmlFor="username" className="text-xs text-gray-500">Username:</label>
+          <label htmlFor="email" className="text-xs text-gray-500">Email:</label>
           <input
             type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
