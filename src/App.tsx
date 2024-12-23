@@ -15,34 +15,43 @@ import AttendancePage from "./components/AttendancePage";
 import StudentDetailPage from "./components/StudentDetailPage";
 import ParentDetailPage from "./components/ParentDetailPage";
 import Logout from "./components/Logout";
+import {ToastContainer} from "react-toastify";
+import GlobalLoader from "./components/GlobalLoader";
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <DashboardLayout/>
-        </ProtectedRoute>
-      }>
-        <Route index element={<Dashboard/>}/>
-        <Route path="students" element={<StudentsPage/>}/>
-        <Route path="students/:id" element={<StudentDetailPage/>}/>
-        <Route path="classes" element={<ClassesPage/>}/>
-        <Route path="teachers" element={<TeachersPage/>}/>
-        <Route path="teachers/:id" element={<TeacherDetailPage/>}/>
-        <Route path="parents" element={<ParentsPage/>}/>
-        <Route path="parents/:id" element={<ParentDetailPage/>}/>
-        <Route path="attendance" element={<AttendancePage/>}/>
-        <Route path="events" element={<EventsPage/>}/>
-        <Route path="messages" element={<p>Messages</p>}/>
-      </Route>
-      <Route path="/settings" element={<p>Settings</p>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/logout" element={<Logout/>}/>
-      <Route path="*" element={<NotFoundPage/>}/>
-    </Routes>
+    <>
+      <GlobalLoader/>
+      <ToastContainer position="top-right"
+                      autoClose={3000}
+                      closeOnClick/>
+      <Routes>
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <DashboardLayout/>
+          </ProtectedRoute>
+        }>
+          <Route index element={<Dashboard/>}/>
+          <Route path="students" element={<StudentsPage/>}/>
+          <Route path="students/:id" element={<StudentDetailPage/>}/>
+          <Route path="classes" element={<ClassesPage/>}/>
+          <Route path="teachers" element={<TeachersPage/>}/>
+          <Route path="teachers/:id" element={<TeacherDetailPage/>}/>
+          <Route path="parents" element={<ParentsPage/>}/>
+          <Route path="parents/:id" element={<ParentDetailPage/>}/>
+          <Route path="attendance" element={<AttendancePage/>}/>
+          <Route path="events" element={<EventsPage/>}/>
+          <Route path="messages" element={<p>Messages</p>}/>
+        </Route>
+        <Route path="/settings" element={<p>Settings</p>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/logout" element={<Logout/>}/>
+        <Route path="*" element={<NotFoundPage/>}/>
+      </Routes>
+    </>
+
   )
 }
 

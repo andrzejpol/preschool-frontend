@@ -2,21 +2,27 @@ import React, {useState} from 'react';
 import Logo from "../../assets/logo.svg";
 import {Link, useNavigate} from "react-router-dom";
 import {login} from "../../../authService.ts"
+import {useDispatch} from "react-redux";
+import {hideGlobalLoader, showGlobalLoader} from "../../slices/loaderSlice.ts";
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    dispatch(showGlobalLoader());
     try {
       const response = await login(email, password);
-      console.log(response.token);
+      console.log(response);
       navigate("/dashboard");
     } catch (error) {
       console.log("Błąd logowania", error);
+    } finally {
+      dispatch(hideGlobalLoader());
     }
   };
 

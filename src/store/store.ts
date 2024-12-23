@@ -5,6 +5,7 @@ import allStudentsReducer from "../slices/allStudentsSlice.ts";
 import allParentsReducer from "../slices/allParentsSlice.ts";
 import eventsSliceReducer from "../slices/eventsSlice.ts";
 import groupsSliceReducer from "../slices/groupsSlice.ts";
+import loaderSliceReducer from "../slices/loaderSlice.ts";
 
 const store = configureStore({
   reducer: {
@@ -13,7 +14,8 @@ const store = configureStore({
     allStudents: allStudentsReducer,
     allParents: allParentsReducer,
     events: eventsSliceReducer,
-    groups: groupsSliceReducer
+    groups: groupsSliceReducer,
+    loaders: loaderSliceReducer,
   },
 });
 
