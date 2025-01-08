@@ -2,6 +2,7 @@ import React from "react";
 import SpeechRecognition, {useSpeechRecognition} from "react-speech-recognition";
 
 const Dictaphone = () => {
+
   const {transcript, listening, resetTranscript, browserSupportsSpeechRecognition} =
     useSpeechRecognition();
 
