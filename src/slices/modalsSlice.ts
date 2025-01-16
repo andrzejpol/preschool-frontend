@@ -13,7 +13,7 @@ const initialState = {
   addParentModal: {
     isOpen: false,
   },
-  addClassModal: {
+  addGroupModal: {
     isOpen: false,
   },
   addOpinionModal: {

@@ -6,9 +6,11 @@ import allParentsReducer from "../slices/allParentsSlice.ts";
 import eventsSliceReducer from "../slices/eventsSlice.ts";
 import groupsSliceReducer from "../slices/groupsSlice.ts";
 import loaderSliceReducer from "../slices/loaderSlice.ts";
+import userDataReducer from "../slices/userDataSlice.ts";
 
 const store = configureStore({
   reducer: {
+    userData: userDataReducer,
     allTeachers: allTeachersReducer,
     modals: modalsReducer,
     allStudents: allStudentsReducer,

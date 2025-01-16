@@ -48,8 +48,8 @@ const menuItems = [
       },
       {
         icon: faPeopleGroup,
-        label: "Classes",
-        href: "/dashboard/classes",
+        label: "Groups",
+        href: "/dashboard/groups",
         visible: ["admin"],
       },
       {

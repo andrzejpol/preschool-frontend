@@ -4,6 +4,8 @@ import {Link, useNavigate} from "react-router-dom";
 import {login} from "../../../authService.ts"
 import {useDispatch} from "react-redux";
 import {hideGlobalLoader, showGlobalLoader} from "../../slices/loaderSlice.ts";
+import {jwtDecode} from "jwt-decode";
+import {setUserData} from "../../slices/userDataSlice.ts";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,7 +19,10 @@ const Login = () => {
     dispatch(showGlobalLoader());
     try {
       const response = await login(email, password);
-      console.log(response);
+      const {Id, FirstName, Role} = jwtDecode(response.token);
+
+      dispatch(setUserData({userId: Id, userFirstName: FirstName, userRole: Role}));
+
       navigate("/dashboard");
     } catch (error) {
       console.log("Błąd logowania", error);

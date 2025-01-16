@@ -8,7 +8,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import TeachersPage from "./components/TeachersPage";
 import StudentsPage from "./components/StudentsPage";
 import ParentsPage from "./components/ParentsPage";
-import ClassesPage from "./components/ClassesPage";
+import GroupsPage from "./components/GroupsPage";
 import EventsPage from "./components/EventsPage";
 import TeacherDetailPage from "./components/TeacherDetailPage";
 import AttendancePage from "./components/AttendancePage";
@@ -17,6 +17,8 @@ import ParentDetailPage from "./components/ParentDetailPage";
 import Logout from "./components/Logout";
 import {ToastContainer} from "react-toastify";
 import GlobalLoader from "./components/GlobalLoader";
+import RoleBasedRoute from "./components/RoleBasedRoute";
+import NotAuthorizedPage from "./components/NonAuthorizedPage";
 
 function App() {
 
@@ -33,9 +35,11 @@ function App() {
           </ProtectedRoute>
         }>
           <Route index element={<Dashboard/>}/>
-          <Route path="students" element={<StudentsPage/>}/>
+          <Route path="students" element={<RoleBasedRoute allowedRoles={['Admin', 'Teacher']}>
+            <StudentsPage/>
+          </RoleBasedRoute>}/>
           <Route path="students/:id" element={<StudentDetailPage/>}/>
-          <Route path="classes" element={<ClassesPage/>}/>
+          <Route path="groups" element={<GroupsPage/>}/>
           <Route path="teachers" element={<TeachersPage/>}/>
           <Route path="teachers/:id" element={<TeacherDetailPage/>}/>
           <Route path="parents" element={<ParentsPage/>}/>
@@ -43,6 +47,7 @@ function App() {
           <Route path="attendance" element={<AttendancePage/>}/>
           <Route path="events" element={<EventsPage/>}/>
           <Route path="messages" element={<p>Messages</p>}/>
+          <Route path="not-authorized" element={<NotAuthorizedPage/>}/>
         </Route>
         <Route path="/settings" element={<p>Settings</p>}/>
         <Route path="/login" element={<Login/>}/>

@@ -1,7 +1,11 @@
 import {faMagnifyingGlass, faMessage, faUserNinja} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useSelector} from "react-redux";
 
 const Navbar = () => {
+
+  const {userFirstName, userRole} = useSelector(state => state.userData);
+
 
   return (
     <div className="flex items-center justify-between p-4">
@@ -18,8 +22,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm leading-3 font-medium">John Doe</span>
-          <span className="text-[10px] text-gray-500 text-right">Admin</span>
+          <span className="text-sm leading-3 font-medium">Witaj, {userFirstName}</span>
+          <span className="text-[10px] text-gray-500 text-right">{userRole}</span>
         </div>
         <FontAwesomeIcon icon={faUserNinja} className="flex items-center justify-center w-[30px] h-[30px]"/>
       </div>
