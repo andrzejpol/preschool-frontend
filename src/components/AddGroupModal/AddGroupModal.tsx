@@ -17,7 +17,6 @@ const AddTeacherModal = ({onClose}: { onClose: () => {} }) => {
 
   const {
     handleSubmit,
-    setValue,
     register,
     reset,
     formState: {errors},
