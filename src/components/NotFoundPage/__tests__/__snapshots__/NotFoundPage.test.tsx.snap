@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFoundPage Component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="w-screen h-screen flex flex-col items-center justify-center bg-gradient-to-b from-preschoolPrimary to-preschoolPrimaryLight"
+  >
+    <h1
+      class="text-6xl font-bold text-gray-800"
+    >
+      404
+    </h1>
+    <p
+      class="text-2xl mt-4 text-gray-600"
+    >
+      Oops! The page you're looking for doesn't exist.
+    </p>
+  </div>
+</DocumentFragment>
+`;

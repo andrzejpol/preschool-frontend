@@ -1,0 +1,100 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`List Component > matches the snapshot when data is present 1`] = `
+<DocumentFragment>
+  <table
+    class="w-full mt-4"
+  >
+    <thead>
+      <tr
+        class="text-left text-gray-500 text-sm"
+      >
+        <th
+          class="text-left"
+        >
+          Name
+        </th>
+        <th
+          class="text-center"
+        >
+          Age
+        </th>
+        <th
+          class="text-right"
+        >
+          Email
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          John Doe
+        </td>
+        <td>
+          30
+        </td>
+        <td>
+          john@example.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Jane Smith
+        </td>
+        <td>
+          25
+        </td>
+        <td>
+          jane@example.com
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`List Component > matches the snapshot when no data is present 1`] = `
+<DocumentFragment>
+  <table
+    class="w-full mt-4"
+  >
+    <thead>
+      <tr
+        class="text-left text-gray-500 text-sm"
+      >
+        <th
+          class="text-left"
+        >
+          Name
+        </th>
+        <th
+          class="text-center"
+        >
+          Age
+        </th>
+        <th
+          class="text-right"
+        >
+          Email
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="flex items-center justify-center h-64 w-full "
+    >
+      <tr>
+        <td
+          colspan="4"
+        >
+          <p
+            class="text-xl font-semibold text-gray-500"
+          >
+            There is no data
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

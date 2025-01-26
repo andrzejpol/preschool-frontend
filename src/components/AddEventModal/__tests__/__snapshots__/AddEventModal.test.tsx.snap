@@ -1,0 +1,137 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AddEventModal Component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50"
+  >
+    <div
+      class="bg-white w-11/12 max-w-lg p-6 rounded-lg shadow-lg relative"
+    >
+      <button
+        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none"
+      >
+        ✖
+      </button>
+      <h2
+        class="text-2xl font-bold mb-4 text-center"
+      >
+        Add event
+      </h2>
+      <form>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="block text-gray-700 font-medium mb-2"
+            for="title"
+          >
+            Title:
+          </label>
+          <input
+            class="w-full border border-gray-300 rounded p-2 bg-white"
+            id="title"
+            name="title"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="block text-gray-700 font-medium mb-2"
+            for="group"
+          >
+            Group:
+          </label>
+          <select
+            class="w-full border border-gray-300 rounded p-2 bg-white"
+            id="group"
+            name="group"
+          >
+            <option
+              disabled=""
+              value=""
+            >
+              Select a group
+            </option>
+            <option
+              value="Group 1"
+            >
+              Group 1
+            </option>
+            <option
+              value="Group 2"
+            >
+              Group 2
+            </option>
+            <option
+              value="Group 3"
+            >
+              Group 3
+            </option>
+          </select>
+        </div>
+        <div
+          class="mb-4"
+        >
+          <label
+            class="block text-gray-700 font-medium mb-2"
+            for="date"
+          >
+            Date:
+          </label>
+          <input
+            class="w-full border border-gray-300 rounded p-2 bg-white"
+            id="date"
+            name="date"
+            type="date"
+          />
+        </div>
+        <div
+          class="mb-4 flex space-x-4"
+        >
+          <div
+            class="mb-4"
+          >
+            <label
+              class="block text-gray-700 font-medium mb-2"
+              for="startTime"
+            >
+              Start time:
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded p-2 bg-white"
+              id="startTime"
+              name="startTime"
+              type="time"
+            />
+          </div>
+          <div
+            class="mb-4"
+          >
+            <label
+              class="block text-gray-700 font-medium mb-2"
+              for="endTime"
+            >
+              End Time:
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded p-2 bg-white"
+              id="endTime"
+              name="endTime"
+              type="time"
+            />
+          </div>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

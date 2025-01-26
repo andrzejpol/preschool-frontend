@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GlobalLoader Component > matches the snapshot when loader is active 1`] = `
+<DocumentFragment>
+  <div
+    class="loader-overlay"
+  >
+    <div
+      class="spinner"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`GlobalLoader Component > matches the snapshot when loader is inactive 1`] = `<DocumentFragment />`;

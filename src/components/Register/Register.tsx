@@ -18,10 +18,7 @@ const Register = () => {
     const user = {firstName, lastName, email, password};
 
     try {
-      const response = await register(user);
-
-      console.log(response);
-
+      await register(user);
       toast.success('User registered successfully!');
       navigate("/login");
     } catch (error) {
@@ -43,7 +40,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
+            className="bg-white text-black border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -54,7 +51,7 @@ const Register = () => {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
-            className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
+            className="bg-white text-black border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -65,7 +62,7 @@ const Register = () => {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
-            className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
+            className="bg-white text-black border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -76,7 +73,7 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
+            className="bg-white text-black border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -87,11 +84,11 @@ const Register = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
+            className="bg-white text-black border border-solid border-gray-500 rounded-[5px] p-1 text-gray-500 focus:border-preschoolPrimary focus:bg-gray-100 focus:outline-none"
           />
         </div>
         <button type="submit"
-                className="py-2 px-5 text-gray-500 border border-solid border-preschoolPrimary rounded-[5px] hover:bg-preschoolPrimary hover:text-white">Register
+                className="bg-white text-black py-2 px-5 text-gray-500 border border-solid border-preschoolPrimary rounded-[5px] hover:bg-preschoolPrimary hover:text-white">Register
         </button>
         <div className="flex gap-2">
           <span className="text-xs">Have an account?</span>

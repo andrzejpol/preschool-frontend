@@ -1,0 +1,583 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ParentsPage Component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-white p-4 rounded-md flex-1 m-4 mt-0"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h1
+        class=" hidden md:block text-lg font-semibold"
+      >
+        All Parents
+      </h1>
+      <div
+        class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto"
+      >
+        <div
+          class="w-full md:w-auto flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-magnifying-glass flex items-center justify-center"
+            data-icon="magnifying-glass"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              fill="currentColor"
+            />
+          </svg>
+          <input
+            class="w-[200px] p-2 bg-transparent outline-none"
+            placeholder="Search..."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="flex items-center gap-4 self-end"
+        >
+          <button
+            class="w-8 h-8 flex items-center justify-center rounded-full bg-preschoolSecondary"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-plus flex items-center justify-center"
+              data-icon="plus"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <table
+      class="w-full mt-4"
+    >
+      <thead>
+        <tr
+          class="text-left text-gray-500 text-sm"
+        >
+          <th>
+            Info
+          </th>
+          <th
+            class="hidden md:table-cell"
+          >
+            Student Names
+          </th>
+          <th
+            class="hidden lg:table-cell"
+          >
+            Phone
+          </th>
+          <th
+            class="hidden lg:table-cell"
+          >
+            Address
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight"
+        >
+          <td
+            class="flex items-center gap-4 p-4"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <h3
+                class="font-semibold"
+              >
+                Steven Cherry
+              </h3>
+              <p
+                class="text-xs text-gray-500"
+              >
+                steven@cherry.com
+              </p>
+            </div>
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Hellen Cherry,John Cherry
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            34534545
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Nowhere City, USA
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <a
+                data-discover="true"
+                href="/dashboard/parents/1"
+              >
+                <button
+                  class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-binoculars flex items-center justify-center"
+                    data-icon="binoculars"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M128 32l32 0c17.7 0 32 14.3 32 32l0 32L96 96l0-32c0-17.7 14.3-32 32-32zm64 96l0 320c0 17.7-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32l0-59.1c0-34.6 9.4-68.6 27.2-98.3C40.9 267.8 49.7 242.4 53 216L60.5 156c2-16 15.6-28 31.8-28l99.8 0zm227.8 0c16.1 0 29.8 12 31.8 28L459 216c3.3 26.4 12.1 51.8 25.8 74.6c17.8 29.7 27.2 63.7 27.2 98.3l0 59.1c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32l0-320 99.8 0zM320 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 32-96 0 0-32zm-32 64l0 160-64 0 0-160 64 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </a>
+              <button
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-trash flex items-center justify-center"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight"
+        >
+          <td
+            class="flex items-center gap-4 p-4"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <h3
+                class="font-semibold"
+              >
+                Steven Cherry
+              </h3>
+              <p
+                class="text-xs text-gray-500"
+              >
+                steven@cherry.com
+              </p>
+            </div>
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Hellen Cherry,John Cherry
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            34534545
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Nowhere City, USA
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <a
+                data-discover="true"
+                href="/dashboard/parents/2"
+              >
+                <button
+                  class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-binoculars flex items-center justify-center"
+                    data-icon="binoculars"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M128 32l32 0c17.7 0 32 14.3 32 32l0 32L96 96l0-32c0-17.7 14.3-32 32-32zm64 96l0 320c0 17.7-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32l0-59.1c0-34.6 9.4-68.6 27.2-98.3C40.9 267.8 49.7 242.4 53 216L60.5 156c2-16 15.6-28 31.8-28l99.8 0zm227.8 0c16.1 0 29.8 12 31.8 28L459 216c3.3 26.4 12.1 51.8 25.8 74.6c17.8 29.7 27.2 63.7 27.2 98.3l0 59.1c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32l0-320 99.8 0zM320 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 32-96 0 0-32zm-32 64l0 160-64 0 0-160 64 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </a>
+              <button
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-trash flex items-center justify-center"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight"
+        >
+          <td
+            class="flex items-center gap-4 p-4"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <h3
+                class="font-semibold"
+              >
+                Steven Cherry
+              </h3>
+              <p
+                class="text-xs text-gray-500"
+              >
+                steven@cherry.com
+              </p>
+            </div>
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Hellen Cherry,John Cherry
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            34534545
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Nowhere City, USA
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <a
+                data-discover="true"
+                href="/dashboard/parents/3"
+              >
+                <button
+                  class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-binoculars flex items-center justify-center"
+                    data-icon="binoculars"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M128 32l32 0c17.7 0 32 14.3 32 32l0 32L96 96l0-32c0-17.7 14.3-32 32-32zm64 96l0 320c0 17.7-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32l0-59.1c0-34.6 9.4-68.6 27.2-98.3C40.9 267.8 49.7 242.4 53 216L60.5 156c2-16 15.6-28 31.8-28l99.8 0zm227.8 0c16.1 0 29.8 12 31.8 28L459 216c3.3 26.4 12.1 51.8 25.8 74.6c17.8 29.7 27.2 63.7 27.2 98.3l0 59.1c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32l0-320 99.8 0zM320 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 32-96 0 0-32zm-32 64l0 160-64 0 0-160 64 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </a>
+              <button
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-trash flex items-center justify-center"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight"
+        >
+          <td
+            class="flex items-center gap-4 p-4"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <h3
+                class="font-semibold"
+              >
+                Steven Cherry
+              </h3>
+              <p
+                class="text-xs text-gray-500"
+              >
+                steven@cherry.com
+              </p>
+            </div>
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Hellen Cherry,John Cherry
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            34534545
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Nowhere City, USA
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <a
+                data-discover="true"
+                href="/dashboard/parents/4"
+              >
+                <button
+                  class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-binoculars flex items-center justify-center"
+                    data-icon="binoculars"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M128 32l32 0c17.7 0 32 14.3 32 32l0 32L96 96l0-32c0-17.7 14.3-32 32-32zm64 96l0 320c0 17.7-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32l0-59.1c0-34.6 9.4-68.6 27.2-98.3C40.9 267.8 49.7 242.4 53 216L60.5 156c2-16 15.6-28 31.8-28l99.8 0zm227.8 0c16.1 0 29.8 12 31.8 28L459 216c3.3 26.4 12.1 51.8 25.8 74.6c17.8 29.7 27.2 63.7 27.2 98.3l0 59.1c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32l0-320 99.8 0zM320 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 32-96 0 0-32zm-32 64l0 160-64 0 0-160 64 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </a>
+              <button
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-trash flex items-center justify-center"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-gray-200 even:bg-slate-100 text-sm hover:bg-preschoolPrimaryLight"
+        >
+          <td
+            class="flex items-center gap-4 p-4"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <h3
+                class="font-semibold"
+              >
+                Steven Cherry
+              </h3>
+              <p
+                class="text-xs text-gray-500"
+              >
+                steven@cherry.com
+              </p>
+            </div>
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Hellen Cherry,John Cherry
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            34534545
+          </td>
+          <td
+            class="hidden md:table-cell"
+          >
+            Nowhere City, USA
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <a
+                data-discover="true"
+                href="/dashboard/parents/5"
+              >
+                <button
+                  class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-binoculars flex items-center justify-center"
+                    data-icon="binoculars"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M128 32l32 0c17.7 0 32 14.3 32 32l0 32L96 96l0-32c0-17.7 14.3-32 32-32zm64 96l0 320c0 17.7-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32l0-59.1c0-34.6 9.4-68.6 27.2-98.3C40.9 267.8 49.7 242.4 53 216L60.5 156c2-16 15.6-28 31.8-28l99.8 0zm227.8 0c16.1 0 29.8 12 31.8 28L459 216c3.3 26.4 12.1 51.8 25.8 74.6c17.8 29.7 27.2 63.7 27.2 98.3l0 59.1c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32l0-320 99.8 0zM320 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 32-96 0 0-32zm-32 64l0 160-64 0 0-160 64 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </a>
+              <button
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-preschoolPrimary"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-trash flex items-center justify-center"
+                  data-icon="trash"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="p-4 flex items-center justify-between text-gray-500"
+    >
+      <button
+        class="py-2 px-4 rounded-md bg-slate-200 text-xs font-semibold disabled:opacity-50 cursor:not-allowed"
+      >
+        Prev
+      </button>
+      <div
+        class="flex items-center gap-2 text-sm"
+      >
+        <button
+          class="px-2 rounded-sm bg-slate-200"
+        >
+          1
+        </button>
+        <button
+          class="px-2 rounded-sm"
+        >
+          2
+        </button>
+        <button
+          class="px-2 rounded-sm"
+        >
+          3
+        </button>
+        ...
+        <button
+          class="px-2 rounded-sm"
+        >
+          10
+        </button>
+      </div>
+      <button
+        class="py-2 px-4 rounded-md bg-slate-200 text-xs font-semibold disabled:opacity-50 cursor:not-allowed"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
